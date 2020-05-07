@@ -4,7 +4,7 @@
 <head>
     <meta content="text/html;charset=UTF-8">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <title>Book Store</title>
+    <title>Jeedit</title>
 </head>
 <body>
 

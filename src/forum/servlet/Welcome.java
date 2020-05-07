@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import forum.business.BooksDAO;
-import forum.business.Book;
+
+import forum.business.Post;
+import forum.business.PostDAO;
 
 /**
  * Servlet implementation class Welcome
@@ -20,7 +21,7 @@ import forum.business.Book;
 public class Welcome extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB
-	private BooksDAO booksDAO;
+	private PostDAO postDAO;
       
     /**
      * @see HttpServlet#HttpServlet()
@@ -35,8 +36,8 @@ public class Welcome extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "/WEB-INF/index.jsp";
-		List<Book> books = booksDAO.findAll();
-		request.setAttribute("books", books);
+		List<Post> posts = postDAO.findAll();
+		request.setAttribute("posts", posts);
 
 		getServletContext()
 		.getRequestDispatcher(url).

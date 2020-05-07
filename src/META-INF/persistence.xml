@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 
- <persistence-unit name="BookstorePU" transaction-type="JTA">
+ <persistence-unit name="JeeditPU" transaction-type="JTA">
 <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
    <jta-data-source>MyDatabase</jta-data-source>
     <!-- <class>classes Entity</class> -->
-	<class>com.polytechnancy.bookstore.resources.Book</class>
-    
+<!-- 	<class>com.polytechnancy.bookstore.resources.Book</class> -->
+    <class>forum.business.Post</class>
     <properties>
         <property name="openjpa.jdbc.DBDictionary" value="mysql" />
         <property name="openjpa.Log" value="DefaultLevel=WARN, Tool=INFO" />

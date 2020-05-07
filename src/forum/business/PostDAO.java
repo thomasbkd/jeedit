@@ -6,7 +6,8 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import forum.business.Book;
+
+import forum.business.Post;
 
 @Stateless
 public class PostDAO {
