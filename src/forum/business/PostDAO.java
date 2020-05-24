@@ -24,7 +24,13 @@ public class PostDAO {
 //		
 //	}
 	
-	public Post findByPostId(String post_id) {
+//	public Post findByPostId(String post_id) {
+//		
+//		return em.find(Post.class,post_id);
+//		
+//	}
+	
+	public Post findByPostId(long post_id) {
 		
 		return em.find(Post.class,post_id);
 		
@@ -34,7 +40,7 @@ public class PostDAO {
 		return em.createQuery( "SELECT t FROM Post t", Post.class).getResultList();
 	}
 	
-	public void remove(String post_id) {
+	public void remove(long post_id) {
 		Post post = em.find(Post.class, post_id);    
 		if (post != null) {
 			em.remove(post);      
@@ -46,8 +52,8 @@ public class PostDAO {
 //		em.persist(book);
 //	}
 	
-	public void create(String post_id,String author, String title, String content) {
-		Post post1 = new Post(post_id,author,title,content);
+	public void create(String author, String title, String content) {
+		Post post1 = new Post(author,title,content);
 		//em.createQuery( "INSERT INTO Task (Task.id,Task.taskName)VALUES (task.id,task.taskName)");
 		em.persist(post1);
 	}

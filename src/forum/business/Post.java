@@ -21,7 +21,7 @@ public class Post implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "post_id")
-	private String post_id;
+	private long post_id;
 	
 	@Column(name = "author")
 	private String author;
@@ -34,15 +34,16 @@ public class Post implements Serializable{
 	
 
 	public Post() {
-		this.post_id = "";
+//		this.post_id = "";
 		this.author = "";
 		this.title = "";
 		this.content = "";
 		
 	}
 
-	public Post(String post_id, String author, String title, String content) {
-		this.post_id = post_id;
+//	public Post(String post_id, String author, String title, String content) {
+	public Post(String author, String title, String content) {
+//		this.post_id = post_id;
 		this.author = author;
 		this.title = title;
 		this.content = content;
@@ -50,11 +51,11 @@ public class Post implements Serializable{
 
 	
 
-	public String getPost_id() {
+	public long getPost_id() {
 		return post_id;
 	}
 
-	public void setPost_id(String post_id) {
+	public void setPost_id(long post_id) {
 		this.post_id = post_id;
 	}
 

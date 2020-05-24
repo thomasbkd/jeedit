@@ -13,35 +13,34 @@
             <div class="large-12 cell">
                 <h2>Jeedit v0.1</h2>
                 <h3>Add a new post</h3>
-                <c:if test="${not empty error}">
-                	<div class="alert callout" aria-live="assertive" role="alert" style="display: block;">
-    				<p><c:out value='${error}'></c:out></p>
-  					</div>
-  				</c:if>
+<%--                 <c:if test="${not empty error}"> --%>
+<!--                 	<div class="alert callout" aria-live="assertive" role="alert" style="display: block;"> -->
+<%--     				<p><c:out value='${error}'></c:out></p> --%>
+<!--   					</div> -->
+<%--   				</c:if> --%>
   				
-                <form action="Add_post" method="post">
+                <form action="process_add_post" method="post">
                     <div class="row">
-                        <div class="medium-6 cell">
-                            <label>ISBN
-                                <input name="ISBN" type="text" placeholder="222XXXX" value='${isbn}'>
-                            </label>
-                        </div>
-                        <div class="medium-6  cell">
-                            <label>Title
-                                <input name="title" type="text" placeholder="The Fellowship of the Ring" value='${title}'>
-                            </label>
-                            
-                        </div>
-<!--                         <div class="medium-6  cell"> -->
-<!--                             <label>Author -->
-<%--                                 <input name="author" type="text" placeholder="J. R. R. Tolkien"  value='${author}'> --%>
+<!--                         <div class="medium-6 cell"> -->
+<!--                             <label>ID -->
+<%--                                 <input name="post_id" type="text" placeholder="222XXXX" value='${post_id}'> --%>
 <!--                             </label> -->
 <!--                         </div> -->
                         <div class="medium-6  cell">
+                            <label>Title
+                                <input name="title" type="text" placeholder="What did you learn today ?" value='${title}'>
+                            </label>
+                            
+                        </div>
+                        <div class="medium-6  cell">
+                            <label>Author
+                                <input name="author" type="text" placeholder="Amandine_du_38"  value='${author}'>
+                            </label>
+                        </div>
+                        <div class="medium-6  cell">
                             <div class="input-group">
-                            	<label>Price
-                            		<input class="input-group-field" name="price" placeholder="10" type="text"  value='${price}'>
-                                	<span class="input-group-label">€</span>
+                            	<label>Content
+                            		<input name="content" type="text" value='${content}'>
                             	</label>
                             </div>
                         </div>

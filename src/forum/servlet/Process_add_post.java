@@ -14,8 +14,8 @@ import forum.business.Post;
 import forum.business.PostDAO;
 
 
-@WebServlet("/Add_post")
-public class Add_post extends HttpServlet {
+@WebServlet("/process_add_post")
+public class Process_add_post extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
 	@EJB
@@ -23,26 +23,29 @@ public class Add_post extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Add_post() {
+    public Process_add_post() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "welcome";
+//		String error = new String();
 		
-		String post_id = request.getParameter("post_id");
+		//String post_id = request.getParameter("post_id");
 		String post_author = request.getParameter("author");
 		String post_title = request.getParameter("title");
 		String post_content = request.getParameter("content");
 		
-		
+//		if (post_id.isEmpty() || post_author.isEmpty() || post_title.isEmpty() || post_content.isEmpty()) {
+//			error = "Fill in all the fields of this form";
+//		}
 		
 		
 //		Book book1 = new Book(book_isbn, book_title, price);
 //		booksDAO.add(book1);
 		
-		postDAO.create(post_id, post_author, post_title,post_content);
+		postDAO.create(post_author, post_title,post_content);
 		response.sendRedirect(url);
 		/*
 			It's up to you
