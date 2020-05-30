@@ -37,7 +37,7 @@ public class PostDAO {
 	}
 	
 	public List<Post> findAll() {
-		return em.createQuery( "SELECT t FROM Post t", Post.class).getResultList();
+		return em.createQuery( "SELECT p FROM Post p", Post.class).getResultList();
 	}
 	
 	public void remove(long post_id) {
