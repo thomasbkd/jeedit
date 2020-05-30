@@ -27,6 +27,8 @@ GRANT ALL PRIVILEGES ON jeedit.* TO 'dbadmin'@'localhost';
 
 Dans l'interface utilisateur `dbadmin` :
 ```sql
+DROP DATABASE IF EXISTS jeedit;
+CREATE DATABASE jeedit; 
 USE jeedit;
 CREATE TABLE Post (post_id int(32) NOT NULL auto_increment primary key, author varchar(64), 
 title varchar(500), content varchar(2000), post_type enum('text','media','type'), 
