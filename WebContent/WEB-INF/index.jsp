@@ -34,6 +34,7 @@
                     	</tr>
                     </c:forEach>
                 </table>
+                <a class="button" href="redirect_add_post">Add post</a>
             </div>
         </div>
     </div>
