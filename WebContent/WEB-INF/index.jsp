@@ -30,8 +30,24 @@
                         		
                             	<input type="submit" value="Reply" class="success button"> </form>
                         	</td>
-                        	
+                        	 
                     	</tr>
+                    	<c:forEach items="${all_posts}" var="post_bis">
+                    		<c:if  test = "${post_bis.parent_id == post.post_id}" >
+	                    		<td>${post_bis.post_id}</td>
+	                    		<td>${post_bis.author}</td>
+	                    		<td>${post_bis.title}</td>
+	                    		<td>${post_bis.content}</td>
+	                    		<td>${post_bis.parent_id}</td>
+	                    		<td><form accept-charset="UTF-8" action="redirect_add_post" method="GET" >
+	                        		<input type="hidden" name="reply_parent_id" value='${post_bis.post_id}'>
+	                        		
+	                            	<input type="submit" value="Reply" class="success button"> </form>
+	                        	</td>
+                    		
+                    		</c:if>
+                    	
+                    	 </c:forEach>
 <!--                     	todo:print replies here -->
                     </c:forEach>
                 </table>
