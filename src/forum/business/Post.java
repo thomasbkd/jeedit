@@ -32,21 +32,26 @@ public class Post implements Serializable{
 	@Column(name = "content")
 	private String content;
 	
+	@Column(name = "parent_id",nullable = true)
+	private long parent_id;
+	
 
 	public Post() {
 //		this.post_id = "";
 		this.author = "";
 		this.title = "";
 		this.content = "";
+		this.parent_id = 0;
 		
 	}
 
 //	public Post(String post_id, String author, String title, String content) {
-	public Post(String author, String title, String content) {
+	public Post(String author, String title, String content, long parent_id) {
 //		this.post_id = post_id;
 		this.author = author;
 		this.title = title;
 		this.content = content;
+		this.parent_id = parent_id;
 	}
 
 	
@@ -81,6 +86,14 @@ public class Post implements Serializable{
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+	
+	public long getParent_id() {
+		return parent_id;
+	}
+
+	public void setParent_id(long parent_id) {
+		this.parent_id = parent_id;
 	}
 
 

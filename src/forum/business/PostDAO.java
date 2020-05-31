@@ -52,8 +52,8 @@ public class PostDAO {
 //		em.persist(book);
 //	}
 	
-	public void create(String author, String title, String content) {
-		Post post1 = new Post(author,title,content);
+	public void create(String author, String title, String content, long parent_id) {
+		Post post1 = new Post(author,title,content,parent_id);
 		//em.createQuery( "INSERT INTO Task (Task.id,Task.taskName)VALUES (task.id,task.taskName)");
 		em.persist(post1);
 	}

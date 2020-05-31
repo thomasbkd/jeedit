@@ -14,23 +14,20 @@
                     <tr><th>ID</th>
                         <th>Author</th>
                         <th>Title</th>
-                        <th>content</th>
+                        <th>Content</th>
                     </tr>
                     <c:forEach items="${posts}" var="post">
                     	<tr>
                     		<td>${post.post_id}</td>
-                    		
                     		<td>${post.author}</td>
                     		<td>${post.title}</td>
                     		<td>${post.content}</td>
-<!--                         	<td><form accept-charset="UTF-8" action="CartProcess" method="post" > -->
-<%--                         		<input type="hidden" name="isbn" value='${book.isbn}'> --%>
-<%--                         		<input type="hidden" name="title" value='${book.title}'> --%>
-<%--                         		<input type="hidden" name="price" value='${book.price}'> --%>
+                    		<td>${post.parent_id}</td>
+                    		<td><form accept-charset="UTF-8" action="redirect_add_post" method="GET" >
+                        		<input type="hidden" name="reply_parent_id" value='${post.post_id}'>
                         		
-<!--                         		<input type="number" name="quantity" value="1"> -->
-<!--                             	<input type="submit" value="Add To Cart" class="success button"> </form> -->
-<!--                         	</td> -->
+                            	<input type="submit" value="Reply" class="success button"> </form>
+                        	</td>
                     	</tr>
                     </c:forEach>
                 </table>

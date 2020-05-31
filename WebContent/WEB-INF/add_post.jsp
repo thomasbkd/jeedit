@@ -21,11 +21,6 @@
   				
                 <form action="process_add_post" method="post">
                     <div class="row">
-<!--                         <div class="medium-6 cell"> -->
-<!--                             <label>ID -->
-<%--                                 <input name="post_id" type="text" placeholder="222XXXX" value='${post_id}'> --%>
-<!--                             </label> -->
-<!--                         </div> -->
                         <div class="medium-6  cell">
                             <label>Title
                                 <input name="title" type="text" placeholder="What did you learn today ?" value='${title}'>
@@ -44,6 +39,8 @@
                             	</label>
                             </div>
                         </div>
+                        
+                        <input type="hidden" name="reply_parent_id_bis" value=<%= request.getParameter("reply_parent_id") %>>
                         <input type="submit" class="button" value="Submit">
                     </div>
                 </form>
