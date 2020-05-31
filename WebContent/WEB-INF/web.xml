@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    version="2.5"> 
+
+    <servlet>
+        <servlet-name>Welcome</servlet-name>
+        <servlet-class>forum.servlet.Welcome</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Welcome</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>Process_add_post</servlet-name>
+        <servlet-class>forum.servlet.Process_add_post</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Process_add_post</servlet-name>
+        <url-pattern>/process_add_post</url-pattern>
+    </servlet-mapping>
+       
+     <servlet>
+        <servlet-name>Redirect_add_post</servlet-name>
+        <servlet-class>forum.servlet.Redirect_add_post</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Redirect_add_post</servlet-name>
+        <url-pattern>/redirect_add_post</url-pattern>
+    </servlet-mapping>
+    
+  
+	<servlet-mapping>
+   		<servlet-name>default</servlet-name>
+   		<url-pattern>*.css</url-pattern>
+	</servlet-mapping>  
+	<servlet-mapping>
+   		<servlet-name>default</servlet-name>
+   		<url-pattern>*.png</url-pattern>
+	</servlet-mapping>
+	
+
+    
+</web-app>
