@@ -8,8 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import forum.business.Post;
 import forum.business.PostDAO;
 
@@ -44,8 +42,8 @@ public class Process_add_post extends HttpServlet {
 		
 //		Book book1 = new Book(book_isbn, book_title, price);
 //		booksDAO.add(book1);
-		
-		postDAO.create(post_author, post_title,post_content);
+		Post p1 = new Post(post_author, post_title,post_content,0);
+		postDAO.create(p1);
 		response.sendRedirect(url);
 		/*
 			It's up to you
