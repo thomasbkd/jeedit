@@ -8,9 +8,9 @@
     <title>jeedit</title>
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">
-    <img src="<%=getServletContext().getContextPath()%>/img/jeedit.png" height="50">
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="/jeedit/">
+    <img src="/img/jeedit.png" height="50">
   </a>
 </nav>
 </body>

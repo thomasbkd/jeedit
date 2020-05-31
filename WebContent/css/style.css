@@ -1,2 +1,53 @@
 @charset "ISO-8859-1";
 
+html{
+    background-color: #505050;
+}
+
+section{
+	padding: 20px;
+	background-color: #505050;
+}
+
+
+
+.post_cadre{
+	display: flex;
+	padding: 20px;
+	margin-bottom: 20px;
+
+	background-color: #ffc5c5;
+	border-radius: 10px;
+	justify-content: space-between;
+}
+
+.title_author{
+	display: flex;
+	vertical-align: bottom;
+}
+
+.title{
+	font-size: 2em;
+	font-weight: bolder;
+	padding-right: 20px;
+}
+
+.author{
+	font-size: 1em;
+	margin-top: 1em;
+}
+
+.vote_system{
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.nb_votes{
+	font-size: 1.6em;
+	font-weight: 500;
+	margin: -10px;
+}
+

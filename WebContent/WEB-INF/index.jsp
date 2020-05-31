@@ -4,27 +4,35 @@
 <html>
 <%@include file="header.jsp"%>
 <body>
-    <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-            <div class="large-12 cell">
-                <h2>jeedit v0.1</h2>
-                <table>
-                    <tr><th>ID</th>
-                        <th>Author</th>
-                        <th>Title</th>
-                        <th>Content</th>
-                    </tr>
-	                    <c:forEach items="${posts}" var="post">
-                    	<tr>
-                    		<td>${post.post_id}</td>
-                    		<td>${post.author}</td>
-                    		<td>${post.title}</td>
-                    		<td>${post.content}</td>
-                    	</tr>
-                    </c:forEach>
-                </table>
-            </div>
-        </div>
-    </div>
+<section>
+	<c:forEach items="${posts}" var="post">
+	<c:if test="${post.parent ==0}">         
+		<div class="post_cadre">
+			<div class="post_attributes">
+				<div class="title_author">
+					<div class="title">
+						${post.title}
+					</div> 
+					<div class="author">
+						${post.author}
+					</div>
+				</div>
+				<div class="post_content">
+					${post.content}
+				</div>
+				
+			</div>
+			
+			<div class="vote_system">
+				<div class="up_vote"><a href="#">▲</a></div>
+				<div class="nb_votes">${post.votes}</div>
+				<div class="down_vote"><a href="#">▼</a></div>
+				
+			</div>
+		</div>
+	</c:if>
+	</c:forEach>          
+
+</section>
 </body>
 </html>

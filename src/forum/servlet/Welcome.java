@@ -17,7 +17,7 @@ import forum.business.PostDAO;
 /**
  * Servlet implementation class Welcome
  */
-@WebServlet("/welcome")
+@WebServlet("/")
 public class Welcome extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB
