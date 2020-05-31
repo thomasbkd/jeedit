@@ -37,7 +37,9 @@ public class Welcome extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "/WEB-INF/index.jsp";
 		List<Post> posts = postDAO.findAll();
-		request.setAttribute("posts", posts);
+		List<Post> original = postDAO.findReply(0);
+		request.setAttribute("all_posts", posts);
+		request.setAttribute("original_posts", original);
 
 		getServletContext()
 		.getRequestDispatcher(url).

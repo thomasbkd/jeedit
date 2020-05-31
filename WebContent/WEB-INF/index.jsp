@@ -15,8 +15,10 @@
                         <th>Author</th>
                         <th>Title</th>
                         <th>Content</th>
+                        <th>Parent ID</th> 
+<!--                          replace later by indentation or something in the display -->
                     </tr>
-                    <c:forEach items="${posts}" var="post">
+                    <c:forEach items="${original_posts}" var="post">
                     	<tr>
                     		<td>${post.post_id}</td>
                     		<td>${post.author}</td>
@@ -28,7 +30,9 @@
                         		
                             	<input type="submit" value="Reply" class="success button"> </form>
                         	</td>
+                        	
                     	</tr>
+<!--                     	todo:print replies here -->
                     </c:forEach>
                 </table>
                 <a class="button" href="redirect_add_post">Add post</a>
