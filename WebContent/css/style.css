@@ -22,6 +22,20 @@ header{
 	margin-top: 20px;
 }
 
+.form_link{
+	color: #dc3545;
+}
+
+.form_link:hover{
+	color: #c82333;
+}
+
+.zoom_center{
+	zoom: 150%;
+    margin-top: 120px;
+    min-width: 500px;
+}
+
 .posts_list{
 	margin: 30px;
 }
@@ -32,9 +46,8 @@ section{
 	padding: 40px;
 	border-radius: 20px;
 	max-width: 1500px;
-    
-
 }
+
 
 
 .post_cadre{

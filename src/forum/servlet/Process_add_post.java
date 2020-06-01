@@ -26,9 +26,10 @@ public class Process_add_post extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "/jeedit/welcome";
 //		String error = new String();
-		
+		request.setCharacterEncoding("UTF-8");
 		//String post_id = request.getParameter("post_id");
 		String post_author = request.getParameter("author");
+		if(post_author.contentEquals("")) post_author = "Anonymous";
 		String post_title = request.getParameter("title");
 		String post_content = request.getParameter("content");
 		int parent_id = Integer.parseInt(request.getParameter("reply_id"));

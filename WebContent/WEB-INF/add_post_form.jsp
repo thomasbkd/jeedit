@@ -1,4 +1,4 @@
-<h3 style="text-align: center; color: #dc3545;">Add a new post</h3>
+<h3 style="text-align: center;"><a href="redirect_add_post" class="form_link">Add a new post</a></h3>
 
 <form action="process_add_post" method="post">
    <div class="form-row">

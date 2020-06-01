@@ -8,18 +8,9 @@
     <title>Add post</title>
 </head>
 <body>
-
-<%--                 <c:if test="${not empty error}"> --%>
-<!--                 	<div class="alert callout" aria-live="assertive" role="alert" style="display: block;"> -->
-<%--     				<p><c:out value='${error}'></c:out></p> --%>
-<!--   					</div> -->
-<%--   				</c:if> --%>
-  				
-                    <%@include file="add_post_form.jsp"%>
-                
-            </div>
-        </div>
-    </div>
-    
+		<div class="add_post_form zoom_center">
+			<%@include file="add_post_form.jsp"%>
+		</div>  
+						
 </body>
 </html>
