@@ -17,11 +17,11 @@ public class PostDAO {
 	}
 	
 	public List<Post> findAll() {
-		return em.createQuery( "SELECT p FROM Post p", Post.class).getResultList();
+		return em.createQuery( "SELECT p FROM Post p ORDER BY p.votes DESC", Post.class).getResultList();
 	}
 	
-	public List<Post> findReply(long post_id) {
-		return em.createQuery( "SELECT t FROM Post t WHERE t.parent_id LIKE:new_id ", Post.class)
+	public List<Post> findPosts(long post_id) {
+		return em.createQuery( "SELECT p FROM Post p WHERE p.parent_id LIKE:new_id  ORDER BY p.votes DESC", Post.class)
 				.setParameter("new_id", post_id)
 				.getResultList();
 	}
