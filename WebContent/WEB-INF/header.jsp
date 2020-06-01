@@ -9,8 +9,8 @@
     <title>jeedit</title>
 </head>
 <body>
-<header>
-  <a class="navbar-brand" href="/jeedit/"><img src="img/jeedit.png" height="100" style="margin-top: 10px;"/></a>
-</header>
+	<header>
+		<a href="/jeedit/"><img src="img/jeedit.png" height="120" style="margin-top: 20px;"></a>
+	</header>
 </body>
 </html>

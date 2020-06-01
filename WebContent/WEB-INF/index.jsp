@@ -11,8 +11,8 @@
 
 <div class="posts_list">
 <section>
-<h1 style="text-align: center; color: #dc3545;">Last posts</h1>	<c:forEach items="${original_posts}" var="orig_post">
-		<div class="post_cadre">
+<h1 style="text-align: center; color: #dc3545;">Best posts</h1>	<c:forEach items="${original_posts}" var="orig_post">
+		<div class="post_cadre" id="${orig_post.post_id}">
 			<div class="post_attributes">
 				<div class="title_author">
 					<div class="title">
@@ -28,16 +28,16 @@
 			</div>
 			
 			<div class="vote_system">
-				<div class="up_vote"><a href="#">▲</a></div>
+				<div class="up_vote"><a href="process_vote?id=${orig_post.post_id}&vote=1">▲</a></div>
 				<div class="nb_votes">${orig_post.votes}</div>
-				<div class="down_vote"><a href="#">▼</a></div>
+				<div class="down_vote"><a href="process_vote?id=${orig_post.post_id}&vote=-1">▼</a></div>
 				<div class="reply_icon"><a href="welcome?rep=${orig_post.post_id}#reply"><img src="img/reply.png" height="15"/></a></div>
 			</div>
 		</div>
 		<div class="all_replies">
 		<c:forEach items="${all_posts}" var="all_post">
 			<c:if test="${all_post.parent_id==orig_post.post_id}">
-				<div class="reply_cadre">
+				<div class="reply_cadre" id="${all_post.post_id}">
 			<div class="reply_attributes">
 				<div class="reply_content">
 					${all_post.content}
@@ -48,9 +48,9 @@
 				</div>
 			
 			<div class="reply_vote_system">
-				<div class="reply_up_vote"><a href="#">▲</a></div>
+				<div class="reply_up_vote"><a href="process_vote?id=${all_post.post_id}&vote=1">▲</a></div>
 				<div class="reply_nb_votes">${all_post.votes}</div>
-				<div class="reply_down_vote"><a href="#">▼</a></div>
+				<div class="reply_down_vote"><a href="process_vote?id=${all_post.post_id}&vote=-1">▼</a></div>
 			</div>
 		</div>
 			</c:if>
@@ -60,10 +60,10 @@
 			<form action="process_add_post" method="post">
    				<div class="form-row">
        				<div class="form-group col-md-2 mb-3">
-           				<input name="author" type="text" class="form-control" placeholder="Pseudo"  value='${author}'>
+           				<input name="author" type="text" class="form-control" placeholder="Pseudo" style="border-color: #007bff;" value='${author}'>
            			</div>
        				<div class="form-group col-md-9 mb-3">
-               			<input name="content" type="text" class="form-control" placeholder="Insert here your content..."  value='${content}' required="required">
+               			<input name="content" type="text" class="form-control" placeholder="Insert here your content..."  value='${content}' style="border-color: #007bff;" required="required">
       				</div>
        				<div class="form-group col-md-1 mb-3">
   						<button type="submit" class="btn btn-primary" style="width: 100%;">Post</button>
