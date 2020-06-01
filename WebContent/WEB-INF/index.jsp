@@ -11,8 +11,9 @@
 	<%@include file="add_post_form.jsp"%>
 </div>
 
+<div class="posts_list">
 <section>
-	<c:forEach items="${original_posts}" var="orig_post">
+<h1 style="text-align: center; color: #dc3545;">Last posts</h1>	<c:forEach items="${original_posts}" var="orig_post">
 		<div class="post_cadre">
 			<div class="post_attributes">
 				<div class="title_author">
@@ -32,9 +33,10 @@
 				<div class="up_vote"><a href="#">▲</a></div>
 				<div class="nb_votes">${orig_post.votes}</div>
 				<div class="down_vote"><a href="#">▼</a></div>
-				<div class="reply_icon"><a href="#"><img src="img/reply.png" height="15"/></a></div>
+				<div class="reply_icon"><a href="welcome?rep=${orig_post.post_id}#reply"><img src="img/reply.png" height="15"/></a></div>
 			</div>
 		</div>
+		<div class="all_replies">
 		<c:forEach items="${all_posts}" var="all_post">
 			<c:if test="${all_post.parent_id==orig_post.post_id}">
 				<div class="reply_cadre">
@@ -54,62 +56,28 @@
 			</div>
 		</div>
 			</c:if>
-		
 		</c:forEach>
+		<c:if test="${rep==orig_post.post_id}">
+		<div class="reply_form" id="reply">
+			<form action="process_add_post" method="post">
+   				<div class="form-row">
+       				<div class="form-group col-md-2 mb-3">
+           				<input name="author" type="text" class="form-control" placeholder="Pseudo"  value='${author}' required="required">
+           			</div>
+       				<div class="form-group col-md-9 mb-3">
+               			<input name="content" type="text" class="form-control" placeholder="Insert here your content..."  value='${content}' required="required">
+      				</div>
+       				<div class="form-group col-md-1 mb-3">
+  						<button type="submit" class="btn btn-primary" style="width: 100%;">Post</button>
+       				</div>
+  			 </div>
+       <input type="hidden" name="reply_id" value="${rep}">
+</form>
+</div>
+		</c:if>
+		</div>
 	</c:forEach>          
 </section>
-
-
-<!-- MARION -->
-
-	<div class="grid-container">
-        <div class="grid-x grid-padding-x">
-            <div class="large-12 cell">
-                <h2>Jeedit v0.1</h2>
-	                <table>
-                    <tr><th>ID</th>
-                        <th>Author</th>
-                        <th>Title</th>
-                        <th>Content</th>
-                        <th>Parent ID</th> 
-<!--                          replace later by indentation or something in the display -->
-                    </tr>
-                    <c:forEach items="${original_posts}" var="post">
-                    	<tr>
-                    		<td>${post.post_id}</td>
-                    		<td>${post.author}</td>
-                    		<td>${post.title}</td>
-                    		<td>${post.content}</td>
-                    		<td>${post.parent_id}</td>
-                    		<td><form accept-charset="UTF-8" action="redirect_add_post" method="GET" >
-                        		<input type="hidden" name="reply_parent_id" value='${post.post_id}'>
-                        		
-                            	<input type="submit" value="Reply" class="success button"> </form>
-                        	</td>
-                        	 
-                    	</tr>
-                    	<c:forEach items="${all_posts}" var="post_bis">
-                    		<c:if  test = "${post_bis.parent_id == post.post_id}" >
-	                    		<td>${post_bis.post_id}</td>
-	                    		<td>${post_bis.author}</td>
-	                    		<td>${post_bis.title}</td>
-	                    		<td>${post_bis.content}</td>
-	                    		<td>${post_bis.parent_id}</td>
-	                    		<td><form accept-charset="UTF-8" action="redirect_add_post" method="GET" >
-	                        		<input type="hidden" name="reply_parent_id" value='${post_bis.post_id}'>
-	                        		
-	                            	<input type="submit" value="Reply" class="success button"> </form>
-	                        	</td>
-                    		
-                    		</c:if>
-                    	
-                    	 </c:forEach>
-<!--                     	todo:print replies here -->
-                    </c:forEach>
-                </table>
-                <a class="button" href="redirect_add_post">Add post</a>
-            </div>
-        </div>
-    </div>
+</div>
 </body>
 </html>

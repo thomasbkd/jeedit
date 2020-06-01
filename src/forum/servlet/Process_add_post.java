@@ -18,28 +18,25 @@ public class Process_add_post extends HttpServlet {
     
 	@EJB
 	private PostDAO postDAO;
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public Process_add_post() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "welcome";
+		String url = "/jeedit/welcome";
 //		String error = new String();
 		
 		//String post_id = request.getParameter("post_id");
 		String post_author = request.getParameter("author");
 		String post_title = request.getParameter("title");
 		String post_content = request.getParameter("content");
-		int parent_id;
-		try {
-			parent_id = Integer.parseInt(request.getParameter("reply_parent_id_bis"));
+		int parent_id = Integer.parseInt(request.getParameter("reply_id"));
+		/* try {
+			parent_id = Integer.parseInt(request.getParameter("reply_id"));
 		} catch (NumberFormatException ex) {
 			parent_id = 0;
-		}
+		} */
 		
 		postDAO.create(post_author, post_title,post_content, parent_id);
 		response.sendRedirect(url);

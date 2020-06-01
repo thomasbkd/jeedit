@@ -17,7 +17,7 @@ import forum.business.PostDAO;
 /**
  * Servlet implementation class Welcome
  */
-@WebServlet("/")
+@WebServlet("/welcome")
 public class Welcome extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB
@@ -40,10 +40,10 @@ public class Welcome extends HttpServlet {
 		List<Post> original = postDAO.findReply(0);
 		request.setAttribute("all_posts", posts);
 		request.setAttribute("original_posts", original);
-
-		getServletContext()
-		.getRequestDispatcher(url).
-		forward(request, response);
+		String rep = request.getParameter("rep");
+		request.setAttribute("rep", rep);
+		
+		getServletContext().getRequestDispatcher(url).forward(request, response);
 	}
 
 

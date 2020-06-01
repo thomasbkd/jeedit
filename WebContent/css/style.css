@@ -1,5 +1,10 @@
 @charset "ISO-8859-1";
 
+html{
+    min-width: 800px;
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: #505050;
 }
@@ -17,11 +22,17 @@ header{
 	margin-top: 20px;
 }
 
+.posts_list{
+	margin: 30px;
+}
+
 section{
-	margin: 50px;
+	margin: auto;
 	background-color: white;
 	padding: 40px;
 	border-radius: 20px;
+	max-width: 1500px;
+    
 
 }
 
@@ -29,7 +40,7 @@ section{
 .post_cadre{
 	display: flex;
 	padding: 10px 20px 10px 20px;
-	margin: auto;
+	margin: 30px 0px 5px 0px;
 	background-color: #fdc9b5;
 	border-radius: 10px;
 	justify-content: space-between;
@@ -53,9 +64,13 @@ section{
 }
 
 .author{
-	font-size: 1em;
+	font-size: 1.2em;
 	font-weight: 500;
-	margin-top: 1em;
+	margin-top: 0.7em;
+}
+
+.post_content{
+	font-size: 1.1em;
 }
 
 .vote_system{
@@ -77,11 +92,14 @@ a:hover{
 	text-decoration: none;
 }
 
+.all_replies{
+	margin-left: 100px;
+}
 
 .reply_cadre{
 	display: flex;
 	padding: 10px 20px 10px 20px;
-	margin: 15px 0px 30px 100px;
+	margin: 10px 0px 10px 0px;
 	background-color: #9bc4de;
 	border-radius: 10px;
 	justify-content: space-between;
@@ -116,4 +134,8 @@ a:hover{
 	font-size: 1.6em;
 	font-weight: 500;
 	margin: -7px;
+}
+
+.reply_form{
+	margin: 10px 0px 10px 0px;
 }

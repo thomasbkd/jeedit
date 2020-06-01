@@ -2,6 +2,7 @@ package forum.business;
 
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.ejb.TransactionManagement;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 

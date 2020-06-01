@@ -3,7 +3,7 @@
 <form action="process_add_post" method="post">
    <div class="form-row">
        <div class="form-group col-md-3 mb-3">
-           <input name="author" type="text" class="form-control" placeholder="Enter your pseudo"  value='${author}' required="required">
+           <input name="author" type="text" class="form-control" placeholder="Pseudo"  value='${author}'>
            
        </div>
        <div class="form-group col-md-7 mb-3">
@@ -21,5 +21,5 @@
        </div>
    </div>
        
-       <input type="hidden" name="reply_parent_id_bis" value=<%= request.getParameter("reply_parent_id") %>>
+       <input type="hidden" name="reply_id" value="0">
 </form>
