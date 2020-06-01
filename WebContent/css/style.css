@@ -4,11 +4,24 @@ html{
     background-color: #505050;
 }
 
-section{
-	padding: 20px;
-	background-color: #505050;
+header{
+	text-align: center;
+	align-items: center;
+	height: 100px;
+	background-color: white;
+	padding-top: 25px;
 }
 
+.add_post_form{
+	width: 50%;
+	margin: auto;
+    margin-bottom: 50px;
+}
+
+section{
+	padding: 50px;
+	background-color: #505050;
+}
 
 
 .post_cadre{
@@ -43,6 +56,7 @@ section{
     justify-content: center;
     align-items: center;
     font-size: 1.2em;
+    padding-right: 10px;
 }
 
 .nb_votes{

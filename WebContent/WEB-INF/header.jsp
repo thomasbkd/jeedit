@@ -8,8 +8,8 @@
     <title>jeedit</title>
 </head>
 <body>
-<nav class="navbar navbar-light bg-light">
+<header>
   <a class="navbar-brand" href="/jeedit/"><h1>jeedit</h1></a>
-</nav>
+</header>
 </body>
 </html>

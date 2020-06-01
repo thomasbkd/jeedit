@@ -8,6 +8,10 @@
 <!-- THOMAS -->
 
 <section>
+	<div class="add_post_form">
+	<%@include file="add_post_form.jsp"%>
+	</div>
+
 	<c:forEach items="${all_posts}" var="post">
 		<div class="post_cadre">
 			<div class="post_attributes">
@@ -16,7 +20,7 @@
 						${post.title}
 					</div> 
 					<div class="author">
-						${post.author}
+						— ${post.author}
 					</div>
 				</div>
 				<div class="post_content">
