@@ -5,11 +5,12 @@
     <meta content="text/html;charset=UTF-8">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/png" href="img/jeedit_icon.png" />
     <title>jeedit</title>
 </head>
 <body>
 <header>
-  <a class="navbar-brand" href="/jeedit/"><h1>jeedit</h1></a>
+  <a class="navbar-brand" href="/jeedit/"><img src="img/jeedit.png" height="100" style="margin-top: 10px;"/></a>
 </header>
 </body>
 </html>

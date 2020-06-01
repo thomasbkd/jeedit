@@ -7,35 +7,55 @@
 
 <!-- THOMAS -->
 
-<section>
-	<div class="add_post_form">
+<div class="add_post_form">
 	<%@include file="add_post_form.jsp"%>
-	</div>
+</div>
 
-	<c:forEach items="${all_posts}" var="post">
+<section>
+	<c:forEach items="${original_posts}" var="orig_post">
 		<div class="post_cadre">
 			<div class="post_attributes">
 				<div class="title_author">
 					<div class="title">
-						${post.title}
+						${orig_post.title}
 					</div> 
 					<div class="author">
-						— ${post.author}
+						— ${orig_post.author}
 					</div>
 				</div>
 				<div class="post_content">
-					${post.content}
+					${orig_post.content}
 				</div>
 			</div>
 			
 			<div class="vote_system">
 				<div class="up_vote"><a href="#">▲</a></div>
-				<div class="nb_votes">${post.votes}</div>
+				<div class="nb_votes">${orig_post.votes}</div>
 				<div class="down_vote"><a href="#">▼</a></div>
-				
+				<div class="reply_icon"><a href="#"><img src="img/reply.png" height="15"/></a></div>
 			</div>
 		</div>
+		<c:forEach items="${all_posts}" var="all_post">
+			<c:if test="${all_post.parent_id==orig_post.post_id}">
+				<div class="reply_cadre">
+			<div class="reply_attributes">
+				<div class="reply_content">
+					${all_post.content}
+				</div>
+				<div class="reply_author">
+					— ${all_post.author}
+				</div>
+				</div>
+			
+			<div class="reply_vote_system">
+				<div class="reply_up_vote"><a href="#">▲</a></div>
+				<div class="reply_nb_votes">${all_post.votes}</div>
+				<div class="reply_down_vote"><a href="#">▼</a></div>
+			</div>
+		</div>
+			</c:if>
 		
+		</c:forEach>
 	</c:forEach>          
 </section>
 
