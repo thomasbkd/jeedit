@@ -39,7 +39,17 @@
 		<a href="process_del_post?del=${orig_post.post_id}" class="del_icon" id="del${orig_post.post_id}" style="margin-top: 30px; display: none;"><img src="img/trash.png" height="18"/></a>
 		</div>
 		</div>
+		<c:set var="has_reply" value="false"/>
+		<c:forEach items="${all_posts}" var="all_post">
+			<c:if test="${all_post.parent_id==orig_post.post_id}">
+					<c:set var="has_reply" value="true"/>
+			</c:if>
+		</c:forEach>
+		<c:if test="${has_reply or rep==orig_post.post_id}">
 		<div class="all_replies">
+		<div class="replies_line">
+		</div>
+		<div class="replies_cadre">
 		<c:forEach items="${all_posts}" var="all_post">
 			<c:if test="${all_post.parent_id==orig_post.post_id}">
 					<div class="reply_and_del"  onmouseover="document.getElementById('del${all_post.post_id}').style.display='block'" onmouseout="document.getElementById('del${all_post.post_id}').style.display='none'">
@@ -84,7 +94,9 @@
 </div>
 		</c:if>
 		</div>
-	</c:forEach>          
+		</div>
+	</c:if>  
+	</c:forEach>      
 </section>
 </div>
 </body>

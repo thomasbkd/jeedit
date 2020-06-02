@@ -34,7 +34,7 @@ header{
 
 .zoom_center{
 	zoom: 150%;
-    margin-top: 120px;
+    margin-top: 80px;
     min-width: 500px;
 }
 
@@ -127,7 +127,21 @@ a:hover{
 }
 
 .all_replies{
-	margin-left: 100px;
+	display: flex;
+}
+
+.replies_line{
+	width: 40px;
+	min-width: 40px;
+    margin: -5px -10px 40px 30px;
+	border-left: 5px solid #9bc4de;
+	border-bottom: 5px solid #9bc4de;
+	border-radius: 0px 0px 0px 20px;
+
+}
+
+.replies_cadre{
+	width: 100%;
 }
 
 .reply_cadre{
@@ -175,7 +189,7 @@ a:hover{
 }
 
 .reply_form{
-	margin: 10px 0px 10px 0px;
+	margin: 10px 40px 10px 0px;
 }
 
 .btn{

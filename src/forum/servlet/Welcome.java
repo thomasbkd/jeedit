@@ -2,6 +2,7 @@ package forum.servlet;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Vector;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -38,8 +39,10 @@ public class Welcome extends HttpServlet {
 		String url = "/WEB-INF/index.jsp";
 		List<Post> posts = postDAO.findAll();
 		List<Post> original = postDAO.findReplies(0);
+
 		request.setAttribute("all_posts", posts);
 		request.setAttribute("original_posts", original);
+		
 		String rep = request.getParameter("rep");
 		request.setAttribute("rep", rep);
 		
