@@ -65,9 +65,11 @@ Dans cette version, il est possible de :
 * Ecrire des posts
 * Répondre à des posts
 * Votes up ou down sur des posts et commentaires
+* Supprimer des posts
 
 Au niveau de l'affichage : 
 * Inclusion de l'UTF-8 pour afficher les accents et les emojis 😀
 * Système d'indentation pour différencier les posts des commentaires
 * Affichage décroissant selon le nombre de votes sur les posts et les commentaires
-* Impossibilité de passer en-dessous de zéro vote sur un post ou un commentaire.
+* Impossibilité de passer en-dessous de zéro vote sur un post ou un commentaire
+* Lors de la suppression d'un post, les réponses à ce post sont elles aussi supprimées.

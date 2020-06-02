@@ -11,7 +11,8 @@
 
 <div class="posts_list">
 <section>
-<h1 style="text-align: center; color: #dc3545;">Best posts</h1>	<c:forEach items="${original_posts}" var="orig_post">
+<h1 class="best_posts">Best posts</h1>	<c:forEach items="${original_posts}" var="orig_post">
+<div class="post_and_del"  onmouseover="document.getElementById('del${orig_post.post_id}').style.display='block'" onmouseout="document.getElementById('del${orig_post.post_id}').style.display='none'">
 		<div class="post_cadre" id="${orig_post.post_id}">
 			<div class="post_attributes">
 				<div class="title_author">
@@ -34,9 +35,14 @@
 				<div class="reply_icon"><a href="welcome?rep=${orig_post.post_id}#reply"><img src="img/reply.png" height="15"/></a></div>
 			</div>
 		</div>
+		<div class="del_post">
+		<a href="process_del_post?del=${orig_post.post_id}" class="del_icon" id="del${orig_post.post_id}" style="margin-top: 30px; display: none;"><img src="img/trash.png" height="18"/></a>
+		</div>
+		</div>
 		<div class="all_replies">
 		<c:forEach items="${all_posts}" var="all_post">
 			<c:if test="${all_post.parent_id==orig_post.post_id}">
+					<div class="reply_and_del"  onmouseover="document.getElementById('del${all_post.post_id}').style.display='block'" onmouseout="document.getElementById('del${all_post.post_id}').style.display='none'">
 				<div class="reply_cadre" id="${all_post.post_id}">
 			<div class="reply_attributes">
 				<div class="reply_content">
@@ -52,6 +58,10 @@
 				<div class="reply_nb_votes">${all_post.votes}</div>
 				<div class="reply_down_vote"><a href="process_vote?id=${all_post.post_id}&vote=-1">▼</a></div>
 			</div>
+		</div>
+		<div class="del_reply">
+		<a href="process_del_post?del=${all_post.post_id}" class="del_icon" id="del${all_post.post_id}" style="display: none;"><img src="img/trash.png" height="15"/></a>
+		</div>
 		</div>
 			</c:if>
 		</c:forEach>

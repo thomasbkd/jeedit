@@ -46,11 +46,16 @@ section{
 	margin: auto;
 	background-color: white;
 	padding: 40px;
+	padding-right: 0px;
 	border-radius: 20px;
 	max-width: 1500px;
 }
 
-
+.best_posts{
+	text-align: center;
+	color: #dc3545;
+	margin-right: 40px;
+}
 
 .post_cadre{
 	display: flex;
@@ -103,6 +108,20 @@ section{
 	margin: -10px;
 }
 
+.post_and_del, .reply_and_del{
+	display: flex;
+}
+
+.del_post, .del_reply{
+	min-width: 40px;
+	max-width: 40px;
+	margin: auto;
+}
+
+.del_icon{
+    margin-left: 10px;
+	opacity: 20%;
+}
 a:hover{
 	text-decoration: none;
 }
@@ -118,6 +137,7 @@ a:hover{
 	background-color: #9bc4de;
 	border-radius: 10px;
 	justify-content: space-between;
+	width: 100%;
 }
 
 .reply_attributes{

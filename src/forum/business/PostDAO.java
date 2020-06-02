@@ -19,7 +19,7 @@ public class PostDAO {
 		return em.createQuery( "SELECT p FROM Post p ORDER BY p.votes DESC", Post.class).getResultList();
 	}
 	
-	public List<Post> findPosts(int post_id) {
+	public List<Post> findReplies(int post_id) {
 		return em.createQuery( "SELECT p FROM Post p WHERE p.parent_id LIKE:param_id ORDER BY p.votes DESC", Post.class)
 				.setParameter("param_id", post_id)
 				.getResultList();
@@ -42,7 +42,12 @@ public class PostDAO {
 	public void remove(int post_id) {
 		Post post = em.find(Post.class, post_id);    
 		if (post != null) {
-			em.remove(post);      
+			em.remove(post);
+		List<Post> replies = findReplies(post_id);
+		for(int i = 0; i<replies.size(); i++) {
+			em.remove(replies.get(i));
+		}
+			
 		}
 	}
 	
