@@ -36,7 +36,16 @@
 			</div>
 		</div>
 		<div class="del_post">
-		<a href="process_del_post?del=${orig_post.post_id}" class="del_icon" id="del${orig_post.post_id}" style="margin-top: 30px; display: none;"><img src="img/trash.png" height="18"/></a>
+		<a href="#" class="del_icon" id="del${orig_post.post_id}" style="margin-top: 30px; display: none;" onclick="confirmDelPost(${orig_post.post_id})"><img src="img/trash.png" height="18"/></a>
+		<script>
+		function confirmDelPost(post_id){
+			if (confirm("Are you sure you want to delete this post? 😐"))
+			{
+				window.open("process_del_post?del="+post_id,"_self")
+			}
+		}
+		</script>
+		
 		</div>
 		</div>
 		<c:set var="has_reply" value="false"/>
@@ -70,7 +79,15 @@
 			</div>
 		</div>
 		<div class="del_reply">
-		<a href="process_del_post?del=${all_post.post_id}" class="del_icon" id="del${all_post.post_id}" style="display: none;"><img src="img/trash.png" height="15"/></a>
+		<a href="#" class="del_icon" id="del${all_post.post_id}" style="display: none;" onclick="confirmDelReply()"><img src="img/trash.png" height="15"/></a>
+		<script>
+		function confirmDelReply(){
+			if (confirm("Are you sure you want to delete this comment? 😐"))
+			{
+				window.open("process_del_post?del=${all_post.post_id}","_self")
+			}
+		}
+		</script>
 		</div>
 		</div>
 			</c:if>

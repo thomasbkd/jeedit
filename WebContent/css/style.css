@@ -64,6 +64,7 @@ section{
 	background-color: #fdc9b5;
 	border-radius: 10px;
 	justify-content: space-between;
+	width: 100%;
 }
 
 .post_attributes{
@@ -120,7 +121,7 @@ section{
 
 .del_icon{
     margin-left: 10px;
-	opacity: 20%;
+	opacity: 30%;
 }
 a:hover{
 	text-decoration: none;
