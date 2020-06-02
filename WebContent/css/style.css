@@ -122,6 +122,7 @@ section{
 .del_icon{
     margin-left: 10px;
 	opacity: 30%;
+	cursor: pointer;
 }
 a:hover{
 	text-decoration: none;
