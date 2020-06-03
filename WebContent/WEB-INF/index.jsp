@@ -11,7 +11,8 @@
 
 <div class="posts_list">
 <section>
-<h1 class="best_posts">Best posts</h1>	<c:forEach items="${original_posts}" var="orig_post">
+<h1 class="best_posts">Best posts</h1>
+<c:forEach items="${original_posts}" var="orig_post">
 <div class="post_and_del"  onmouseover="document.getElementById('del${orig_post.post_id}').style.display='block'" onmouseout="document.getElementById('del${orig_post.post_id}').style.display='none'">
 		<div class="post_cadre" id="${orig_post.post_id}">
 			<div class="post_attributes">

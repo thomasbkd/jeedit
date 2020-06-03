@@ -37,7 +37,7 @@ public class Post implements Serializable{
 	@Column(name = "post_date")
 	private Date post_date;
 	
-	@Column(name = "parent_id",nullable = true)
+	@Column(name = "parent_id")
 	private int parent_id;
 	
 	@Column(name = "votes")
