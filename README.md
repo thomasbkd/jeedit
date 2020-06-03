@@ -52,10 +52,9 @@ parent_id int(32) default 0,
 votes int(32) default 0) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE utf8mb4_general_ci;
 
 INSERT INTO Post (`post_id`,`author`,`title`,`content`,`post_type`,`post_date`,`parent_id`,`votes`) VALUES (1,'Marion & Thomas','Bienvenue sur ce super site ! 🤩','Bon voilà, voici le premier post sur notre jeedit 🍵, j\'espère que ça marchera bien surtout les commentaires 🧾. \r\nPour le système de votes y\'a encore un peu de boulot mais on est sûr que ça va le faire 😅 (UPDATE : ça fonctionne !!! 🥳🎉)\r\nBonne visite ! 😄','text',NULL,0,23);
-INSERT INTO Post (`post_id`,`author`,`title`,`content`,`post_type`,`post_date`,`parent_id`,`votes`) VALUES (2,'Anonymous',NULL,'bon par contre, quelques petites modifications manquent à l\'appel :','text',NULL,1,3);
+INSERT INTO Post (`post_id`,`author`,`title`,`content`,`post_type`,`post_date`,`parent_id`,`votes`) VALUES (2,'Anonymous',NULL,'bon par contre, quelques fonctionnalités manquent à l\'appel :','text',NULL,1,3);
 INSERT INTO Post (`post_id`,`author`,`title`,`content`,`post_type`,`post_date`,`parent_id`,`votes`) VALUES (3,'Anonymous',NULL,'par exemple, on n\'a réussi qu\'à coder un étage de commentaire, bien qu\'on aurait voulu qu\'il y en ai un peu plus (on voulait exploiter un peu plus le parent_id), mais on n\'a pas trouvé d\'algorithme permettant de le faire efficacement à l\'aide des JSTL (pas de boucle while par exemple). ','text',NULL,1,1);
 INSERT INTO Post (`post_id`,`author`,`title`,`content`,`post_type`,`post_date`,`parent_id`,`votes`) VALUES (4,'Anonymous',NULL,'on aurait également souhaité créer de réels utilisateurs plutôt que d\'utiliser des simples pseudos, cela nous aurait permis de limiter le nombre de votes, pour éviter qu\'il s\'agisse plus d\'une course au clic qu\'autre chose.','text',NULL,1,1);
-INSERT INTO Post (`post_id`,`author`,`title`,`content`,`post_type`,`post_date`,`parent_id`,`votes`) VALUES (5,'Anonymous',NULL,'nous n\'avons pas non plus intégré la suppression des posts au site, bien que la fonction soit disponible dans le DAO !','text',NULL,1,1);
 INSERT INTO Post (`post_id`,`author`,`title`,`content`,`post_type`,`post_date`,`parent_id`,`votes`) VALUES (6,'Anonymous',NULL,'Enfin bref, bonne utilisation 😉','text',NULL,2,0);
 ```
 
